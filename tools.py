@@ -19,13 +19,6 @@ from matplotlib.ticker import AutoMinorLocator  # Used to set minor ticks on gra
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
-# Configurable Variables
-# Email: 
-msg['From'] = "skysatops06@gmail.com"
-password = "!t1e2s3t45"
-msg['To'] = "skysatops06@gmail.com"
-
-
 
 # This function takes the inputs of an email (subject, to, from, body, attachments, etc)and uses email.mime to simplify
 # the data and convert a human-readable input into the proper layout needed to send an email via SMTP network propocal.
@@ -35,6 +28,12 @@ msg['To'] = "skysatops06@gmail.com"
 # work. Visit https://www.youtube.com/watch?v=bXRYJEKjqIM for more details
 def sendEmail(level, value, pVal, fluxplot):
     msg = MIMEMultipart()  # Stating that it will use MIMEMultipart layout
+
+    # Configurable Variables
+    # Email:
+    msg['From'] = "skysatops06@gmail.com"
+    password = "!t1e2s3t45"
+    msg['To'] = "skysatops06@gmail.com"
 
     # Adding plot as attachment
     attachment = open(fluxplot, 'rb')  # rb = read bytes, so read file as read bytes
