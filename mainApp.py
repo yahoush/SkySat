@@ -1,6 +1,6 @@
 #######################################
 # SkySat Mission Ops Coding Challenge #
-#         Yasamin Houshmand			  #
+#         Yasamin Houshmand           #
 ########################################################################################################################
 # This application takes a NOAA GOES Proton Flux text file (ftp://ftp.swpc.noaa.gov/pub/lists/particle/), converts the #
 # data to a pandas dataframe, iterates through the rows of the dataframe one-by-one, checking for values in the P>10,  #
@@ -8,24 +8,24 @@
 # will trigger a Warning (flux > 1), Alert (flux>10), or Critical (flux>100) email and make a POST request to an API.  #
 # Additionally, if the flux level has returned to below 1 (flux<1) for at least 90 minutes, it will trigger an Info    #
 # email and make a POST request to the API. With each email it attaches an up-to-date plot with the information up     #
-# until that point in time.                                                					       #
-#														       #
+# until that point in time.                                                                                            #
+#                                                                                                                      #
 # Few things to note:                                                                                                  #
 # 1) There is an "installLibs.sh" file that comes with this program - it should be used to install necessary libraries #
-#														       #
+#                                                                                                                      #
 # 2) If the flux level is consistently above a certain threshold, it will send emails/make POST requests repeatedly.   #
-#     This is by design, since the idea is that each new entry will be a new update from the weather satellite	       #
-#														       #
+#     This is by design, since the idea is that each new entry will be a new update from the weather satellite         #
+#                                                                                                                      #
 # 3) The email is configurable, so the details will need to be added in the 'tools.py' file, under the "sendEmail"     #
 #     method. The "To", "From", "password", and server "smtplib.SMTP(<server>, <port>)" details would change           #
 #     Additionally, I created 'skysatops06@gmail.com' just for testing purposes - please feel free to use it! :)       #
-#														       #
+#                                                                                                                      #
 # 4) Similarly, the API Post URL is configurable, but will need to be changed in the 'tools.py' file                   #
-#														       #
+#                                                                                                                      #
 # 5) The text input can be designed in many ways - as of now I have set it to take input via the cmd line in the form  #
 #     of a human written text, however the line below it in the comments is there incase a script would be run. Once   #
-#     replaced with the "input" line, the bash/cmd line entries should be as follows: 				       #
-#     python3 mainApp.py <NOAA GOES Proton Flux filename>							       #
+#     replaced with the "input" line, the bash/cmd line entries should be as follows:                                  #
+#     python3 mainApp.py <NOAA GOES Proton Flux filename>                                                              #
 #                                                                                                                      #
 #           Thank you for this opportunity and I hope the app works well on your ubuntu system! :)                     #
 ########################################################################################################################
