@@ -1,6 +1,6 @@
 #######################################
 # SkySat Mission Ops Coding Challenge #
-#         Yasamin Houshmand			      #
+#         Yasamin Houshmand           #
 ########################################################################################################################
 # This application takes a NOAA GOES Proton Flux text file (ftp://ftp.swpc.noaa.gov/pub/lists/particle/), converts the #
 # data to a pandas dataframe, iterates through the rows of the dataframe one-by-one, checking for values in the P>10,  #
